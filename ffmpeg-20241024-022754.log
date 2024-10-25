@@ -1,0 +1,117 @@
+ffmpeg started on 2024-10-24 at 02:27:54
+Report written to "ffmpeg-20241024-022754.log"
+Log level: 48
+Command line:
+ffmpeg -report -loglevel debug -i "C:\\Users\\admin\\Desktop\\myvideolinks\\vamsi.mp4" -vf "scale=256:144" -pix_fmt yuv420p -c:v libx264 -preset fast -crf 23 -f segment -segment_time 20 -reset_timestamps 1 pipe:1
+ffmpeg version N-117438-gec9985b54f-20241009 Copyright (c) 2000-2024 the FFmpeg developers
+  built with gcc 14.2.0 (crosstool-NG 1.26.0.106_ed12fa6)
+  configuration: --prefix=/ffbuild/prefix --pkg-config-flags=--static --pkg-config=pkg-config --cross-prefix=x86_64-w64-mingw32- --arch=x86_64 --target-os=mingw32 --enable-gpl --enable-version3 --disable-debug --disable-w32threads --enable-pthreads --enable-iconv --enable-zlib --enable-libfreetype --enable-libfribidi --enable-gmp --enable-libxml2 --enable-lzma --enable-fontconfig --enable-libharfbuzz --enable-libvorbis --enable-opencl --disable-libpulse --enable-libvmaf --disable-libxcb --disable-xlib --enable-amf --enable-libaom --enable-libaribb24 --enable-avisynth --enable-chromaprint --enable-libdav1d --enable-libdavs2 --enable-libdvdread --enable-libdvdnav --disable-libfdk-aac --enable-ffnvcodec --enable-cuda-llvm --enable-frei0r --enable-libgme --enable-libkvazaar --enable-libaribcaption --enable-libass --enable-libbluray --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librist --enable-libssh --enable-libtheora --enable-libvpx --enable-libwebp --enable-libzmq --enable-lv2 --enable-libvpl   libavutil      59. 42.100 / 59. 42.100
+  libavcodec     61. 21.100 / 61. 21.100
+  libavformat    61.  9.100 / 61.  9.100
+  libavdevice    61.  4.100 / 61.  4.100
+  libavfilter    10.  6.100 / 10.  6.100
+  libswscale      8.  5.100 /  8.  5.100
+  libswresample   5.  4.100 /  5.  4.100
+  libpostproc    58.  4.100 / 58.  4.100
+Splitting the commandline.
+Reading option '-report' ... matched as option 'report' (generate a report) with argument '1'.
+Reading option '-loglevel' ... matched as option 'loglevel' (set logging level) with argument 'debug'.
+Reading option '-i' ... matched as input url with argument 'C:\Users\admin\Desktop\myvideolinks\vamsi.mp4'.
+Reading option '-vf' ... matched as option 'vf' (alias for -filter:v (apply filters to video streams)) with argument 'scale=256:144'.
+Reading option '-pix_fmt' ... matched as option 'pix_fmt' (set pixel format) with argument 'yuv420p'.
+Reading option '-c:v' ... matched as option 'c' (select encoder/decoder ('copy' to copy stream without reencoding)) with argument 'libx264'.
+Reading option '-preset' ... matched as AVOption 'preset' with argument 'fast'.
+Reading option '-crf' ... matched as AVOption 'crf' with argument '23'.
+Reading option '-f' ... matched as option 'f' (force container format (auto-detected otherwise)) with argument 'segment'.
+Reading option '-segment_time' ... matched as AVOption 'segment_time' with argument '20'.
+Reading option '-reset_timestamps' ... matched as AVOption 'reset_timestamps' with argument '1'.
+Reading option 'pipe:1' ... matched as output url.
+Finished splitting the commandline.
+Parsing a group of options: global .
+Applying option report (generate a report) with argument 1.
+Applying option loglevel (set logging level) with argument debug.
+Successfully parsed a group of options.
+Parsing a group of options: input url C:\Users\admin\Desktop\myvideolinks\vamsi.mp4.
+Successfully parsed a group of options.
+Opening an input file: C:\Users\admin\Desktop\myvideolinks\vamsi.mp4.
+[AVFormatContext @ 00000264150a9d00] Opening 'C:\Users\admin\Desktop\myvideolinks\vamsi.mp4' for reading
+[file @ 0000026415057a00] Setting default whitelist 'file,crypto,data'
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000264150a9d00] Format mov,mp4,m4a,3gp,3g2,mj2 probed with size=2048 and score=100
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000264150a9d00] ISO: File Type Major Brand: isom
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000264150a9d00] Unknown dref type 0x206c7275 size 12
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000264150a9d00] Processing st: 0, edit list 0 - media time: 0, duration: 5838884
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000264150a9d00] Unknown dref type 0x206c7275 size 12
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000264150a9d00] Processing st: 1, edit list 0 - media time: 0, duration: 1626120
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000264150a9d00] Before avformat_find_stream_info() pos: 34566792 bytes read:111015 seeks:1 nb_streams:2
+Transform tree:
+    mdct_inv_float_avx2 - type: mdct_float, len: 64, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+        fft32_asm_float_fma3 - type: fft_float, len: 32, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+Transform tree:
+    mdct_inv_float_avx2 - type: mdct_float, len: 64, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+        fft32_asm_float_fma3 - type: fft_float, len: 32, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+Transform tree:
+    mdct_pfa_3xM_inv_float_c - type: mdct_float, len: 96, factors[2]: [3, any], flags: [unaligned, out_of_place, inv_only]
+        fft16_ns_float_fma3 - type: fft_float, len: 16, factor: 2, flags: [aligned, inplace, out_of_place, preshuf]
+Transform tree:
+    mdct_inv_float_avx2 - type: mdct_float, len: 120, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+        fft_pfa_15xM_asm_float_avx2 - type: fft_float, len: 60, factors[2]: [15, 2], flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+            fft4_fwd_asm_float_sse2 - type: fft_float, len: 4, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+Transform tree:
+    mdct_inv_float_avx2 - type: mdct_float, len: 128, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+        fft_sr_asm_float_fma3 - type: fft_float, len: 64, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+Transform tree:
+    mdct_inv_float_avx2 - type: mdct_float, len: 480, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+        fft_pfa_15xM_asm_float_avx2 - type: fft_float, len: 240, factors[2]: [15, 2], flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+            fft16_asm_float_fma3 - type: fft_float, len: 16, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+Transform tree:
+    mdct_inv_float_avx2 - type: mdct_float, len: 512, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+        fft_sr_asm_float_fma3 - type: fft_float, len: 256, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+Transform tree:
+    mdct_pfa_3xM_inv_float_c - type: mdct_float, len: 768, factors[2]: [3, any], flags: [unaligned, out_of_place, inv_only]
+        fft_sr_ns_float_fma3 - type: fft_float, len: 128, factor: 2, flags: [aligned, inplace, out_of_place, preshuf]
+Transform tree:
+    mdct_inv_float_avx2 - type: mdct_float, len: 960, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+        fft_pfa_15xM_asm_float_avx2 - type: fft_float, len: 480, factors[2]: [15, 2], flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+            fft32_asm_float_fma3 - type: fft_float, len: 32, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+Transform tree:
+    mdct_inv_float_avx2 - type: mdct_float, len: 1024, factors[2]: [2, any], flags: [aligned, out_of_place, inv_only]
+        fft_sr_asm_float_fma3 - type: fft_float, len: 512, factor: 2, flags: [aligned, inplace, out_of_place, preshuf, asm_call]
+Transform tree:
+    mdct_fwd_float_c - type: mdct_float, len: 1024, factors[2]: [2, any], flags: [unaligned, out_of_place, fwd_only]
+        fft_sr_ns_float_fma3 - type: fft_float, len: 512, factor: 2, flags: [aligned, inplace, out_of_place, preshuf]
+[libdav1d @ 00000264150b0280] libdav1d 21d9f29
+[libdav1d @ 00000264150b0280] Using 1 threads, 0 max_frame_delay
+[libdav1d @ 00000264150b0280] Frame 0:  size 1280x720  upscaled 1280  render 1280x720  subsample 2x2  bitdepth 10  tiles 2x2.
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000264150a9d00] All info found
+[mov,mp4,m4a,3gp,3g2,mj2 @ 00000264150a9d00] After avformat_find_stream_info() pos: 68338 bytes read:179305 seeks:2 frames:2
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\Users\admin\Desktop\myvideolinks\vamsi.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomav01iso2mp41
+    encoder         : Lavf61.0.100
+  Duration: 00:02:12.40, start: 0.000000, bitrate: 2088 kb/s
+  Stream #0:0[0x1](eng), 1, 1/44100: Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 127 kb/s (default)
+    Metadata:
+      handler_name    : ISO Media file produced by Google Inc.
+      vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](und), 1, 1/12288: Video: av1 (libdav1d) (Main), 1 reference frame (av01 / 0x31307661), yuv420p10le(tv, bt2020nc/bt2020/smpte2084), 1280x720, 0/1, 1956 kb/s, 24 fps, 24 tbr, 12288 tbn (default)
+    Metadata:
+      handler_name    : ISO Media file produced by Google Inc.
+      vendor_id       : [0][0][0][0]
+    Side data:
+      Mastering Display Metadata, has_primaries:1 has_luminance:1 r(0.7080,0.2920) g(0.1700,0.7970) b(0.1310 0.0460) wp(0.3127, 0.3290) min_luminance=0.000100, max_luminance=1000.000000
+Successfully opened the file.
+Parsing a group of options: output url pipe:1.
+Applying option vf (alias for -filter:v (apply filters to video streams)) with argument scale=256:144.
+Applying option pix_fmt (set pixel format) with argument yuv420p.
+Applying option c:v (select encoder/decoder ('copy' to copy stream without reencoding)) with argument libx264.
+Applying option f (force container format (auto-detected otherwise)) with argument segment.
+Successfully parsed a group of options.
+Opening an output file: pipe:1.
+[out#0/segment @ 0000026415068640] No explicit maps, mapping streams automatically...
+Output #0, segment, to 'pipe:1':
+[out#0/segment @ 0000026415068640] Output file does not contain any stream
+Error opening output file pipe:1.
+Error opening output files: Invalid argument
+[AVIOContext @ 00000264150b2a00] Statistics: 179305 bytes read, 2 seeks
